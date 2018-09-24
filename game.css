@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,500,700');
+
+:root {
+    --color-purple: #8251bc;
+    --color-purple-dark: hsl(267, 44%, 43%);
+    --color-purple-light: #e6ccff;
+    --color-grey-light: #faf8f5;
+    --color-white: #fff;
+}
+
+html {
+    color: var(--color-white);
+    font-family: "Roboto Condensed";
+    font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    html {
+        font-size: 37.5%;
+    }
+}
+
+body {
+    background-color: var(--color-grey-light);
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.game-box {
+    width: 66rem;
+    height: 66rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.game-box__item {
+    background-color: var(--color-white);
+    color: var(--color-purple);
+    margin: 1rem;
+    font-size: 3.2rem;
+    font-weight: 500;
+    border-radius: .3rem;
+    transition: all .1s ease;
+    backface-visibility: hidden;
+    border: 2px solid var(--color-purple-light);
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-content: center;    
+}
+
+.game-box__item:hover, .js-clicked {
+    box-shadow: 0px 0px 2rem rgba(230, 204, 255, .66);
+    transform: scale(1.05);
+}
+
+.start-box, .win-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background-color: rgba(0, 0, 0, .9);
+    height: 100vh;
+    width: 100vw;
+    transition: all .5s ease;
+}
+
+.start-box__main-text {
+    font-size: 9.6rem;
+}
+
+.start-box__text {
+    text-align: center;
+}
+
+.win-box__text {
+    display: inherit;
+    flex-flow: column;
+    text-align: center;
+    font-size: 4.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.win-box__span,
+.start-box__text {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 1rem 0 3.33rem 0;
+}
+
+.btn {
+    cursor: pointer;
+
+    display: inline-block;
+    padding: 2.2rem 6rem;
+    
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    box-shadow: 0px 0px 2rem .5rem rgba(0,0,0,.2);
+    transition: all .3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-purple-dark);
+}
+
+.js-invisible {
+    opacity: 0;
+}
+
+.js-empty {
+    border: 2px dashed var(--color-purple-light);
+}
+
